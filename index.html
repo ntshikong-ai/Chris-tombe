@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#b20d19">
 <title>PRÉPA EXCELLENTIA WANTANSHI — TEST BLANC</title>
 
 <style>
@@ -19,7 +20,15 @@
   --shadow:0 20px 55px rgba(0,0,0,.10);
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   font-family:Inter,Segoe UI,Arial,sans-serif;
@@ -27,10 +36,18 @@ body{
   color:var(--black);
 }
 
-button,input{font:inherit}
-button{cursor:pointer}
+button,
+input{
+  font:inherit;
+}
 
-.hidden{display:none!important}
+button{
+  cursor:pointer;
+}
+
+.hidden{
+  display:none!important;
+}
 
 /* =========================
    ACCUEIL
@@ -57,6 +74,7 @@ button{cursor:pointer}
   color:rgba(255,255,255,.035);
   transform:rotate(-8deg);
   user-select:none;
+  pointer-events:none;
 }
 
 .home{
@@ -102,7 +120,9 @@ button{cursor:pointer}
   margin-bottom:20px;
 }
 
-.home h1 span{color:var(--red)}
+.home h1 span{
+  color:var(--red);
+}
 
 .intro{
   color:var(--gray);
@@ -130,7 +150,9 @@ button{cursor:pointer}
   font-size:25px;
 }
 
-.stat small{color:var(--gray)}
+.stat small{
+  color:var(--gray);
+}
 
 .home-right{
   background:#121419;
@@ -141,7 +163,10 @@ button{cursor:pointer}
   justify-content:center;
 }
 
-.home-right h2{font-size:27px;margin-bottom:8px}
+.home-right h2{
+  font-size:27px;
+  margin-bottom:8px;
+}
 
 .home-right p{
   color:#aeb3bd;
@@ -184,6 +209,10 @@ label{
 .start:hover{
   background:var(--red2);
   transform:translateY(-2px);
+}
+
+.start:active{
+  transform:translateY(0);
 }
 
 .note{
@@ -310,6 +339,7 @@ label{
   font-weight:900;
   min-width:80px;
   text-align:center;
+  font-variant-numeric:tabular-nums;
 }
 
 .timer.warn{
@@ -378,7 +408,8 @@ label{
   margin-top:25px;
 }
 
-.next,.review{
+.next,
+.review{
   border:0;
   border-radius:10px;
   padding:13px 20px;
@@ -418,7 +449,9 @@ label{
   align-items:center;
 }
 
-.reading-head h1{font-size:25px}
+.reading-head h1{
+  font-size:25px;
+}
 
 .reading-head p{
   color:#aeb3bd;
@@ -440,7 +473,9 @@ label{
   line-height:1.9;
 }
 
-.read-body p{margin-bottom:18px}
+.read-body p{
+  margin-bottom:18px;
+}
 
 .read-foot{
   background:white;
@@ -497,6 +532,7 @@ label{
   padding:18px 22px;
   display:flex;
   justify-content:space-between;
+  align-items:center;
 }
 
 .close{
@@ -506,6 +542,7 @@ label{
   border-radius:7px;
   width:32px;
   height:32px;
+  font-size:20px;
 }
 
 .modal-body{
@@ -513,6 +550,10 @@ label{
   line-height:1.8;
   overflow:auto;
   max-height:75vh;
+}
+
+.modal-body p{
+  margin-bottom:18px;
 }
 
 /* =========================
@@ -540,7 +581,9 @@ label{
   margin-bottom:8px;
 }
 
-.hero-result p{color:#b4b9c2}
+.hero-result p{
+  color:#b4b9c2;
+}
 
 .circle{
   width:145px;
@@ -557,7 +600,9 @@ label{
   font-size:35px;
 }
 
-.circle small{color:#bbb}
+.circle small{
+  color:#bbb;
+}
 
 .result-grid{
   display:grid;
@@ -579,7 +624,9 @@ label{
   margin-bottom:7px;
 }
 
-.box strong{font-size:27px}
+.box strong{
+  font-size:27px;
+}
 
 .subjects{
   display:grid;
@@ -594,7 +641,9 @@ label{
   border-radius:15px;
 }
 
-.subject-box strong{display:block}
+.subject-box strong{
+  display:block;
+}
 
 .subject-score{
   color:var(--red);
@@ -699,25 +748,90 @@ label{
 ========================= */
 
 @media(max-width:800px){
-  .home{grid-template-columns:1fr}
-  .home-left,.home-right{padding:30px 24px}
-  .stats{grid-template-columns:1fr}
-  .top{padding:0 14px}
-  .pill{display:none}
-  .card{padding:23px 17px}
-  .question{font-size:19px}
-  .reading-head{flex-direction:column;align-items:flex-start;gap:15px}
-  .read-body{padding:25px 20px;max-height:none}
-  .read-foot{flex-direction:column;align-items:stretch}
-  .hero-result{grid-template-columns:1fr;text-align:center}
-  .circle{margin:auto}
-  .result-grid,.subjects{grid-template-columns:repeat(2,1fr)}
+
+  .home{
+    grid-template-columns:1fr;
+  }
+
+  .home-left,
+  .home-right{
+    padding:30px 24px;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .top{
+    padding:0 14px;
+  }
+
+  .pill{
+    display:none;
+  }
+
+  .card{
+    padding:23px 17px;
+  }
+
+  .question{
+    font-size:19px;
+  }
+
+  .reading-head{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+  }
+
+  .read-body{
+    padding:25px 20px;
+    max-height:none;
+  }
+
+  .read-foot{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .hero-result{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .circle{
+    margin:auto;
+  }
+
+  .result-grid,
+  .subjects{
+    grid-template-columns:repeat(2,1fr);
+  }
 }
 
 @media(max-width:480px){
-  .result-grid,.subjects{grid-template-columns:1fr}
-  .actions{flex-direction:column}
-  .next,.review{width:100%}
+
+  .home h1{
+    letter-spacing:-2px;
+  }
+
+  .result-grid,
+  .subjects{
+    grid-template-columns:1fr;
+  }
+
+  .actions{
+    flex-direction:column;
+  }
+
+  .next,
+  .review{
+    width:100%;
+  }
+
+  .question{
+    font-size:18px;
+  }
 }
 </style>
 </head>
@@ -730,83 +844,88 @@ label{
 
 <section id="home">
 
-<div class="watermark">NATHAN</div>
+  <div class="watermark">NATHAN</div>
 
-<div class="home">
+  <div class="home">
 
-<div class="home-left">
+    <div class="home-left">
 
-<div class="logo">
-<span class="dot"></span>
-PRÉPA EXCELLENTIA WANTANSHI
-</div>
+      <div class="logo">
+        <span class="dot"></span>
+        PRÉPA EXCELLENTIA WANTANSHI
+      </div>
 
-<h1>
-TEST<br>
-<span>BLANC</span><br>
-EXCELLENTIA
-</h1>
+      <h1>
+        TEST<br>
+        <span>BLANC</span><br>
+        EXCELLENTIA
+      </h1>
 
-<p class="intro">
-Une évaluation de haut niveau conçue pour mesurer ta maîtrise
-des matières fondamentales, ton raisonnement et ta capacité
-à résoudre des questions exigeantes sous pression.
-</p>
+      <p class="intro">
+        Une évaluation de haut niveau conçue pour mesurer ta maîtrise
+        des matières fondamentales, ton raisonnement et ta capacité
+        à résoudre des questions exigeantes sous pression.
+      </p>
 
-<div class="stats">
+      <div class="stats">
 
-<div class="stat">
-<strong>100</strong>
-<small>questions</small>
-</div>
+        <div class="stat">
+          <strong>100</strong>
+          <small>questions</small>
+        </div>
 
-<div class="stat">
-<strong>4</strong>
-<small>matières</small>
-</div>
+        <div class="stat">
+          <strong>4</strong>
+          <small>matières</small>
+        </div>
 
-<div class="stat">
-<strong>130 min</strong>
-<small>maximum</small>
-</div>
+        <div class="stat">
+          <strong>130 min</strong>
+          <small>maximum</small>
+        </div>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-<div class="home-right">
+    <div class="home-right">
 
-<h2>Commencer le test</h2>
+      <h2>Commencer le test</h2>
 
-<p>
-Entre ton nom complet. Le chronomètre global commencera
-dès le lancement de l'épreuve.
-</p>
+      <p>
+        Entre ton nom complet. Le chronomètre global commencera
+        dès le lancement de l'épreuve.
+      </p>
 
-<label>NOM COMPLET DU CANDIDAT</label>
+      <label for="name">NOM COMPLET DU CANDIDAT</label>
 
-<input
-id="name"
-type="text"
-placeholder="Ex. Nathan Tshik"
-autocomplete="off"
->
+      <input
+        id="name"
+        type="text"
+        placeholder="Ex. Nathan Tshik"
+        autocomplete="off"
+        maxlength="80"
+      >
 
-<button class="start" onclick="startTest()">
-COMMENCER L'ÉVALUATION →
-</button>
+      <button
+        class="start"
+        id="startBtn"
+        type="button"
+      >
+        COMMENCER L'ÉVALUATION →
+      </button>
 
-<div class="note">
-100 questions • 25 Mathématiques • 25 Français •
-25 English • 25 Culture générale.
-<br><br>
-Une seule bonne réponse par question.
-Retour arrière désactivé pendant l'épreuve.
-</div>
+      <div class="note">
+        100 questions • 25 Mathématiques • 25 Français •
+        25 English • 25 Culture générale.
+        <br><br>
+        Une seule bonne réponse par question.
+        Retour arrière désactivé pendant l'épreuve.
+      </div>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
@@ -817,66 +936,83 @@ Retour arrière désactivé pendant l'épreuve.
 
 <section id="test" class="hidden">
 
-<header class="top">
+  <header class="top">
 
-<div class="brand">
-<div class="brand-box">N</div>
-<span>EXCELLENTIA</span>
-</div>
+    <div class="brand">
+      <div class="brand-box">N</div>
+      <span>EXCELLENTIA</span>
+    </div>
 
-<div class="top-right">
-<div class="pill" id="subject">Mathématiques</div>
-<div class="global" id="global">00:00:00</div>
-</div>
+    <div class="top-right">
+      <div class="pill" id="subject">Mathématiques</div>
+      <div class="global" id="global">00:00:00</div>
+    </div>
 
-</header>
+  </header>
 
-<div id="content"></div>
+  <div id="content"></div>
 
 </section>
 
 
-<!-- MODAL -->
+<!-- =====================================================
+     MODAL
+===================================================== -->
 
 <div id="modal" class="modal hidden">
 
-<div class="modal-box">
+  <div class="modal-box">
 
-<div class="modal-head">
-<strong id="modalTitle">Texte</strong>
-<button class="close" onclick="closeModal()">×</button>
+    <div class="modal-head">
+      <strong id="modalTitle">Texte</strong>
+
+      <button
+        class="close"
+        id="closeModalBtn"
+        type="button"
+      >
+        ×
+      </button>
+    </div>
+
+    <div class="modal-body" id="modalBody"></div>
+
+  </div>
+
 </div>
 
-<div class="modal-body" id="modalBody"></div>
 
-</div>
-
-</div>
-
-
-<!-- WARNING -->
+<!-- =====================================================
+     WARNING
+===================================================== -->
 
 <div id="warning" class="warning hidden">
 
-<div class="warning-card">
+  <div class="warning-card">
 
-<div class="warning-icon">!</div>
+    <div class="warning-icon">!</div>
 
-<h2>Tentative de triche détectée</h2>
+    <h2>Tentative de triche détectée</h2>
 
-<p>
-Le système a détecté que tu as quitté la page ou changé
-d'onglet pendant l'épreuve.
-</p>
+    <p>
+      Le système a détecté que tu as quitté la page ou changé
+      d'onglet pendant l'épreuve.
+    </p>
 
-<button onclick="closeWarning()">REPRENDRE LE TEST</button>
+    <button
+      id="closeWarningBtn"
+      type="button"
+    >
+      REPRENDRE LE TEST
+    </button>
 
-</div>
+  </div>
 
 </div>
 
 
 <script>
+"use strict";
 
 /* =====================================================
    TEXTES
@@ -1072,8 +1208,8 @@ The workshop had become a bridge between generations.
 One afternoon, a young engineer named Daniel asked Miriam why she
 had refused to sell the collection.
 
-She smiled and replied, “Because once something belongs only to a
-private collector, it can disappear from public memory.”
+She smiled and replied, "Because once something belongs only to a
+private collector, it can disappear from public memory."
 
 Daniel understood the point.
 
@@ -1094,9 +1230,9 @@ the past has left behind.
    QUESTIONS
 ===================================================== */
 
-const Q=[];
+const Q = [];
 
-function add(subject,question,options,answer,explanation,extra={}){
+function add(subject, question, options, answer, explanation, extra = {}){
   Q.push({
     subject,
     question,
@@ -1112,627 +1248,992 @@ function add(subject,question,options,answer,explanation,extra={}){
    MATHÉMATIQUES — 25
 ===================================================== */
 
-add("Mathématiques",
-"Réduire l'expression 2(3x−4)−3(x+2)+5.",
-["3x−9","3x−3","9x−9","3x+9"],0,
-"6x−8−3x−6+5=3x−9.",
-{topic:"Calcul littéral"});
+add(
+  "Mathématiques",
+  "Réduire l'expression 2(3x−4)−3(x+2)+5.",
+  ["3x−9","3x−3","9x−9","3x+9"],
+  0,
+  "6x−8−3x−6+5=3x−9.",
+  {topic:"Calcul littéral"}
+);
 
-add("Mathématiques",
-"Le reste de la division de P(x)=2x³−x²+3x−5 par x−2 est :",
-["−1","3","9","13"],2,
-"Par le théorème du reste, P(2)=16−4+6−5=13. Correction : la bonne réponse est D.",
-{topic:"Polynômes"});
+add(
+  "Mathématiques",
+  "Le reste de la division de P(x)=2x³−x²+3x−5 par x−2 est :",
+  ["−1","3","9","13"],
+  3,
+  "Par le théorème du reste, P(2)=16−4+6−5=13.",
+  {topic:"Polynômes"}
+);
 
-add("Mathématiques",
-"Factoriser complètement x³−4x.",
-["x(x−4)","x(x−2)(x+2)","(x−4)(x+1)","x²(x−4)"],1,
-"x³−4x=x(x²−4)=x(x−2)(x+2).",
-{topic:"Factorisation"});
+add(
+  "Mathématiques",
+  "Factoriser complètement x³−4x.",
+  ["x(x−4)","x(x−2)(x+2)","(x−4)(x+1)","x²(x−4)"],
+  1,
+  "x³−4x=x(x²−4)=x(x−2)(x+2).",
+  {topic:"Factorisation"}
+);
 
-add("Mathématiques",
-"Pour −3<x<2, le signe de (x+3)(x−2) est :",
-["Positif","Négatif","Nul","Toujours positif"],1,
-"Le premier facteur est positif et le second négatif : produit négatif.",
-{topic:"Signes"});
+add(
+  "Mathématiques",
+  "Pour −3<x<2, le signe de (x+3)(x−2) est :",
+  ["Positif","Négatif","Nul","Toujours positif"],
+  1,
+  "Le premier facteur est positif et le second négatif : le produit est négatif.",
+  {topic:"Signes"}
+);
 
-add("Mathématiques",
-"Quelle est la condition d'existence de (x+1)/(x²−9) ?",
-["x≠3 uniquement","x≠−3 uniquement","x≠−3 et x≠3","x>3"],2,
-"x²−9=(x−3)(x+3), donc le dénominateur ne doit pas être nul.",
-{topic:"Expressions rationnelles"});
+add(
+  "Mathématiques",
+  "Quelle est la condition d'existence de (x+1)/(x²−9) ?",
+  ["x≠3 uniquement","x≠−3 uniquement","x≠−3 et x≠3","x>3"],
+  2,
+  "x²−9=(x−3)(x+3), donc le dénominateur ne doit pas être nul.",
+  {topic:"Expressions rationnelles"}
+);
 
-add("Mathématiques",
-"Le domaine de définition de f(x)=√(5−2x) est :",
-["]−∞;5/2]","[5/2;+∞[","]−∞;−5/2]","R"],0,
-"Il faut 5−2x≥0, donc x≤5/2.",
-{topic:"Fonctions et domaine"});
+add(
+  "Mathématiques",
+  "Le domaine de définition de f(x)=√(5−2x) est :",
+  ["]−∞;5/2]","[5/2;+∞[","]−∞;−5/2]","R"],
+  0,
+  "Il faut 5−2x≥0, donc x≤5/2.",
+  {topic:"Fonctions et domaine"}
+);
 
-add("Mathématiques",
-"Le domaine de définition de f(x)=ln(2x−6) est :",
-["x≥3","x>3","x<3","R"],1,
-"Un logarithme exige un argument strictement positif : 2x−6>0.",
-{topic:"Fonctions et domaine"});
+add(
+  "Mathématiques",
+  "Le domaine de définition de f(x)=ln(2x−6) est :",
+  ["x≥3","x>3","x<3","R"],
+  1,
+  "Un logarithme exige un argument strictement positif : 2x−6>0.",
+  {topic:"Fonctions et domaine"}
+);
 
-add("Mathématiques",
-"lim(x→+∞) (5x²−2x+1)/(2x²+7) vaut :",
-["0","2","5/2","+∞"],2,
-"Les degrés sont égaux : la limite est le rapport 5/2.",
-{topic:"Limites"});
+add(
+  "Mathématiques",
+  "lim(x→+∞) (5x²−2x+1)/(2x²+7) vaut :",
+  ["0","2","5/2","+∞"],
+  2,
+  "Les degrés sont égaux : la limite est le rapport 5/2.",
+  {topic:"Limites"}
+);
 
-add("Mathématiques",
-"Pour f(x)=3+2/(x−4), l'asymptote horizontale est :",
-["x=4","y=4","y=3","x=3"],2,
-"Quand x tend vers ±∞, 2/(x−4) tend vers 0, donc y=3.",
-{topic:"Asymptotes"});
+add(
+  "Mathématiques",
+  "Pour f(x)=3+2/(x−4), l'asymptote horizontale est :",
+  ["x=4","y=4","y=3","x=3"],
+  2,
+  "Quand x tend vers ±∞, 2/(x−4) tend vers 0, donc y=3.",
+  {topic:"Asymptotes"}
+);
 
-add("Mathématiques",
-"Une asymptote verticale de f(x)=1/(x+5) a pour équation :",
-["x=5","x=−5","y=5","y=−5"],1,
-"Le dénominateur s'annule pour x=−5.",
-{topic:"Asymptotes"});
+add(
+  "Mathématiques",
+  "Une asymptote verticale de f(x)=1/(x+5) a pour équation :",
+  ["x=5","x=−5","y=5","y=−5"],
+  1,
+  "Le dénominateur s'annule pour x=−5.",
+  {topic:"Asymptotes"}
+);
 
-add("Mathématiques",
-"Si f(x)=x³−3x²+2, alors f'(x)= :",
-["3x²−6x","3x²−3x","x²−6x","3x−6"],0,
-"Dérivée terme à terme : 3x²−6x.",
-{topic:"Dérivation"});
+add(
+  "Mathématiques",
+  "Si f(x)=x³−3x²+2, alors f'(x)= :",
+  ["3x²−6x","3x²−3x","x²−6x","3x−6"],
+  0,
+  "Dérivée terme à terme : 3x²−6x.",
+  {topic:"Dérivation"}
+);
 
-add("Mathématiques",
-"Pour f(x)=−x²+6x−1, l'extremum est :",
-["Un minimum égal à −10","Un maximum égal à 8","Un maximum égal à 9","Un minimum égal à 8"],1,
-"Le sommet est en x=3 et f(3)=8. Comme a<0, c'est un maximum.",
-{topic:"Variations et extremums"});
+add(
+  "Mathématiques",
+  "Pour f(x)=−x²+6x−1, l'extremum est :",
+  ["Un minimum égal à −10","Un maximum égal à 8","Un maximum égal à 9","Un minimum égal à 8"],
+  1,
+  "Le sommet est en x=3 et f(3)=8. Comme a<0, c'est un maximum.",
+  {topic:"Variations et extremums"}
+);
 
-add("Mathématiques",
-"f(x)=x²−4x+7 est décroissante sur :",
-["]−∞;2]","[2;+∞[","R","[−2;2]"],0,
-"f'(x)=2x−4<0 lorsque x<2.",
-{topic:"Variations"});
+add(
+  "Mathématiques",
+  "f(x)=x²−4x+7 est décroissante sur :",
+  ["]−∞;2]","[2;+∞[","R","[−2;2]"],
+  0,
+  "f'(x)=2x−4<0 lorsque x<2.",
+  {topic:"Variations"}
+);
 
-add("Mathématiques",
-"Dans un triangle rectangle, les deux côtés de l'angle droit mesurent 9 et 12. L'hypoténuse vaut :",
-["13","15","18","21"],1,
-"c²=9²+12²=225, donc c=15.",
-{topic:"Pythagore"});
+add(
+  "Mathématiques",
+  "Dans un triangle rectangle, les deux côtés de l'angle droit mesurent 9 et 12. L'hypoténuse vaut :",
+  ["13","15","18","21"],
+  1,
+  "c²=9²+12²=225, donc c=15.",
+  {topic:"Pythagore"}
+);
 
-add("Mathématiques",
-"Dans une configuration de Thalès, AM/AB=3/5 et AC=20. Si MN∥BC, AN vaut :",
-["8","10","12","15"],2,
-"AN/AC=AM/AB=3/5, donc AN=12.",
-{topic:"Thalès"});
+add(
+  "Mathématiques",
+  "Dans une configuration de Thalès, AM/AB=3/5 et AC=20. Si MN∥BC, AN vaut :",
+  ["8","10","12","15"],
+  2,
+  "AN/AC=AM/AB=3/5, donc AN=12.",
+  {topic:"Thalès"}
+);
 
-add("Mathématiques",
-"A(−2;4) et B(3;−1). Le milieu de [AB] est :",
-["(1/2;3/2)","(5;3)","(−1/2;5/2)","(1;−1)"],0,
-"Milieu=((−2+3)/2;(4−1)/2)=(1/2;3/2).",
-{topic:"Vecteurs et coordonnées"});
+add(
+  "Mathématiques",
+  "A(−2;4) et B(3;−1). Le milieu de [AB] est :",
+  ["(1/2;3/2)","(5;3)","(−1/2;5/2)","(1;−1)"],
+  0,
+  "Milieu=((−2+3)/2;(4−1)/2)=(1/2;3/2).",
+  {topic:"Vecteurs et coordonnées"}
+);
 
-add("Mathématiques",
-"Les vecteurs u(2;−3) et v(−4;6) sont :",
-["Orthogonaux","Colinéaires","De même sens","Unitaires"],1,
-"v=−2u, donc ils sont colinéaires.",
-{topic:"Vecteurs"});
+add(
+  "Mathématiques",
+  "Les vecteurs u(2;−3) et v(−4;6) sont :",
+  ["Orthogonaux","Colinéaires","De même sens","Unitaires"],
+  1,
+  "v=−2u, donc ils sont colinéaires.",
+  {topic:"Vecteurs"}
+);
 
-add("Mathématiques",
-"Si sin(θ)=3/5 et θ est aigu, alors cos(θ)= :",
-["2/5","3/5","4/5","5/4"],2,
-"sin²θ+cos²θ=1, donc cosθ=4/5 pour un angle aigu.",
-{topic:"Trigonométrie"});
+add(
+  "Mathématiques",
+  "Si sin(θ)=3/5 et θ est aigu, alors cos(θ)= :",
+  ["2/5","3/5","4/5","5/4"],
+  2,
+  "sin²θ+cos²θ=1, donc cosθ=4/5 pour un angle aigu.",
+  {topic:"Trigonométrie"}
+);
 
-add("Mathématiques",
-"Dans un triangle rectangle, tan(A)= :",
-["hypoténuse/opposé","opposé/adjacent","adjacent/opposé","opposé/hypoténuse"],1,
-"tan(A)=côté opposé/côté adjacent.",
-{topic:"Trigonométrie"});
+add(
+  "Mathématiques",
+  "Dans un triangle rectangle, tan(A)= :",
+  ["hypoténuse/opposé","opposé/adjacent","adjacent/opposé","opposé/hypoténuse"],
+  1,
+  "tan(A)=côté opposé/côté adjacent.",
+  {topic:"Trigonométrie"}
+);
 
-add("Mathématiques",
-"Une urne contient 5 rouges, 3 bleues et 2 vertes. La probabilité de tirer une boule qui n'est pas bleue est :",
-["3/10","7/10","1/2","4/5"],1,
-"Il y a 7 boules non bleues sur 10.",
-{topic:"Probabilités"});
+add(
+  "Mathématiques",
+  "Une urne contient 5 rouges, 3 bleues et 2 vertes. La probabilité de tirer une boule qui n'est pas bleue est :",
+  ["3/10","7/10","1/2","4/5"],
+  1,
+  "Il y a 7 boules non bleues sur 10.",
+  {topic:"Probabilités"}
+);
 
-add("Mathématiques",
-"On lance deux dés équilibrés. La probabilité d'obtenir une somme égale à 7 est :",
-["1/12","1/6","1/3","5/36"],1,
-"Il existe 6 couples favorables sur 36 : 6/36=1/6.",
-{topic:"Probabilités"});
+add(
+  "Mathématiques",
+  "On lance deux dés équilibrés. La probabilité d'obtenir une somme égale à 7 est :",
+  ["1/12","1/6","1/3","5/36"],
+  1,
+  "Il existe 6 couples favorables sur 36 : 6/36=1/6.",
+  {topic:"Probabilités"}
+);
 
-add("Mathématiques",
-"La proposition « Si n est divisible par 4, alors n est divisible par 2 » est :",
-["Une implication vraie","Une implication fausse","Une équivalence","Une contradiction"],0,
-"Tout multiple de 4 est nécessairement multiple de 2.",
-{topic:"Logique"});
+add(
+  "Mathématiques",
+  "La proposition « Si n est divisible par 4, alors n est divisible par 2 » est :",
+  ["Une implication vraie","Une implication fausse","Une équivalence","Une contradiction"],
+  0,
+  "Tout multiple de 4 est nécessairement multiple de 2.",
+  {topic:"Logique"}
+);
 
-add("Mathématiques",
-"« x=2 » est une condition suffisante pour « x²=4 », mais est-elle nécessaire ?",
-["Oui, toujours","Non, car x=−2 convient aussi","Oui car x²=4 implique x=2","Impossible"],1,
-"x²=4 admet x=2 et x=−2 : x=2 n'est donc pas nécessaire.",
-{topic:"Logique"});
+add(
+  "Mathématiques",
+  "« x=2 » est une condition suffisante pour « x²=4 », mais est-elle nécessaire ?",
+  ["Oui, toujours","Non, car x=−2 convient aussi","Oui car x²=4 implique x=2","Impossible"],
+  1,
+  "x²=4 admet x=2 et x=−2 : x=2 n'est donc pas nécessaire.",
+  {topic:"Logique"}
+);
 
-add("Mathématiques",
-"Une suite arithmétique vérifie u₃=11 et u₇=23. Sa raison est :",
-["2","3","4","6"],1,
-"u₇−u₃=4r=12, donc r=3.",
-{topic:"Suites arithmétiques"});
+add(
+  "Mathématiques",
+  "Une suite arithmétique vérifie u₃=11 et u₇=23. Sa raison est :",
+  ["2","3","4","6"],
+  1,
+  "u₇−u₃=4r=12, donc r=3.",
+  {topic:"Suites arithmétiques"}
+);
 
-add("Mathématiques",
-"Une suite géométrique positive vérifie u₂=6 et u₅=162. Sa raison q vaut :",
-["2","3","4","6"],1,
-"u₅/u₂=q³=162/6=27, donc q=3.",
-{topic:"Suites géométriques"});
+add(
+  "Mathématiques",
+  "Une suite géométrique positive vérifie u₂=6 et u₅=162. Sa raison q vaut :",
+  ["2","3","4","6"],
+  1,
+  "u₅/u₂=q³=162/6=27, donc q=3.",
+  {topic:"Suites géométriques"}
+);
 
 
 /* =====================================================
-   ANGLAIS — 25
+   ENGLISH — 25
 ===================================================== */
 
-/* 10 compréhension */
+/* COMPREHENSION */
 
-add("English",
-"Why did Miriam continue repairing mechanical clocks?",
-["She wanted to become famous.","She believed machines deserved to be understood.","She was forced to do it.","She hated modern technology."],1,
-"The text says she believed a machine deserved to be understood before being thrown away.",
-{type:"comprehension"});
+add(
+  "English",
+  "Why did Miriam continue repairing mechanical clocks?",
+  ["She wanted to become famous.","She believed machines deserved to be understood.","She was forced to do it.","She hated modern technology."],
+  1,
+  "The text says she believed a machine deserved to be understood before being thrown away.",
+  {type:"comprehension"}
+);
 
-add("English",
-"What happened during the severe sandstorm?",
-["The town became richer.","Electricity and communication systems failed.","The clocks stopped.","The workshop burned down."],1,
-"The storm caused major failures in electricity and communication.",
-{type:"comprehension"});
+add(
+  "English",
+  "What happened during the severe sandstorm?",
+  ["The town became richer.","Electricity and communication systems failed.","The clocks stopped.","The workshop burned down."],
+  1,
+  "The storm caused major failures in electricity and communication.",
+  {type:"comprehension"}
+);
 
-add("English",
-"How did Miriam's clocks become useful during the crisis?",
-["They predicted the weather.","They helped residents coordinate their movements.","They produced electricity.","They communicated with satellites."],1,
-"Several clocks were placed at important locations to coordinate activities.",
-{type:"comprehension"});
+add(
+  "English",
+  "How did Miriam's clocks become useful during the crisis?",
+  ["They predicted the weather.","They helped residents coordinate their movements.","They produced electricity.","They communicated with satellites."],
+  1,
+  "Several clocks were placed at important locations to coordinate activities.",
+  {type:"comprehension"}
+);
 
-add("English",
-"Why did Miriam refuse to sell her collection?",
-["She wanted to destroy it.","She believed it should remain part of public memory.","She disliked tourists.","She had no buyers."],1,
-"She wanted the knowledge to remain publicly accessible.",
-{type:"comprehension"});
+add(
+  "English",
+  "Why did Miriam refuse to sell her collection?",
+  ["She wanted to destroy it.","She believed it should remain part of public memory.","She disliked tourists.","She had no buyers."],
+  1,
+  "She wanted the knowledge to remain publicly accessible.",
+  {type:"comprehension"}
+);
 
-add("English",
-"What did Miriam propose instead of a luxury tourist attraction?",
-["A public workshop.","A hotel.","A shopping centre.","A private museum."],0,
-"She proposed a public workshop where young artisans could learn.",
-{type:"comprehension"});
+add(
+  "English",
+  "What did Miriam propose instead of a luxury tourist attraction?",
+  ["A public workshop.","A hotel.","A shopping centre.","A private museum."],
+  0,
+  "She proposed a public workshop where young artisans could learn.",
+  {type:"comprehension"}
+);
 
-add("English",
-"How did the workshop eventually become important?",
-["Only tourists visited it.","It connected traditional craftsmanship with modern engineering.","It became a factory.","It was turned into a school."],1,
-"The workshop became a bridge between generations and technologies.",
-{type:"comprehension"});
+add(
+  "English",
+  "How did the workshop eventually become important?",
+  ["Only tourists visited it.","It connected traditional craftsmanship with modern engineering.","It became a factory.","It was turned into a school."],
+  1,
+  "The workshop became a bridge between generations and technologies.",
+  {type:"comprehension"}
+);
 
-add("English",
-"What does the expression “a dying profession” suggest?",
-["A profession becoming less common.","A dangerous profession.","A highly profitable profession.","A profession that kills people."],0,
-"It means a profession that is gradually disappearing.",
-{type:"comprehension"});
+add(
+  "English",
+  "What does the expression “a dying profession” suggest?",
+  ["A profession becoming less common.","A dangerous profession.","A highly profitable profession.","A profession that kills people."],
+  0,
+  "It means a profession that is gradually disappearing.",
+  {type:"comprehension"}
+);
 
-add("English",
-"Why did engineers become interested in the old clocks?",
-["They wanted to destroy them.","They wanted to study their precision and mechanisms.","They wanted to sell the town.","They wanted to replace Miriam."],1,
-"The text says engineers studied the mechanisms and their precision.",
-{type:"comprehension"});
+add(
+  "English",
+  "Why did engineers become interested in the old clocks?",
+  ["They wanted to destroy them.","They wanted to study their precision and mechanisms.","They wanted to sell the town.","They wanted to replace Miriam."],
+  1,
+  "The text says engineers studied the mechanisms and their precision.",
+  {type:"comprehension"}
+);
 
-add("English",
-"What did Daniel eventually understand?",
-["The collection was valuable because its knowledge was alive.","Old clocks were useless.","Miriam wanted money.","Technology was dangerous."],0,
-"He understood that the knowledge behind the clocks was still alive.",
-{type:"comprehension"});
+add(
+  "English",
+  "What did Daniel eventually understand?",
+  ["The collection was valuable because its knowledge was alive.","Old clocks were useless.","Miriam wanted money.","Technology was dangerous."],
+  0,
+  "He understood that the knowledge behind the clocks was still alive.",
+  {type:"comprehension"}
+);
 
-add("English",
-"What is the central idea of the story?",
-["The past should replace technology.","Old knowledge can contribute to the future.","Modern devices are always unreliable.","Desert towns cannot develop."],1,
-"The story argues that understanding the past can help shape the future.",
-{type:"comprehension"});
+add(
+  "English",
+  "What is the central idea of the story?",
+  ["The past should replace technology.","Old knowledge can contribute to the future.","Modern devices are always unreliable.","Desert towns cannot develop."],
+  1,
+  "The story argues that understanding the past can help shape the future.",
+  {type:"comprehension"}
+);
 
 
-/* 15 langue */
+/* LANGUAGE */
 
-add("English",
-"Choose the correct relative pronoun: “The woman ___ repaired the clock is Miriam.”",
-["which","whom","who","whose"],2,
-“Who” refers to a person and is the subject of the relative clause.",
-{type:"language"});
+add(
+  "English",
+  "Choose the correct relative pronoun: “The woman ___ repaired the clock is Miriam.”",
+  ["which","whom","who","whose"],
+  2,
+  "“Who” refers to a person and is the subject of the relative clause.",
+  {type:"language"}
+);
 
-add("English",
-"Choose the correct relative pronoun: “The clock ___ Miriam repaired was very old.”",
-["who","which","whom","whose"],1,
-“Which” refers to a thing and is the object of the relative clause.",
-{type:"language"});
+add(
+  "English",
+  "Choose the correct relative pronoun: “The clock ___ Miriam repaired was very old.”",
+  ["who","which","whom","whose"],
+  1,
+  "“Which” refers to a thing and is the object of the relative clause.",
+  {type:"language"}
+);
 
-add("English",
-"Choose the correct form: “The engineer ___ I met was impressed.”",
-["which","whom","whose","where"],1,
-“Whom” can be used as the object for a person in formal English.",
-{type:"language"});
+add(
+  "English",
+  "Choose the correct form: “The engineer ___ I met was impressed.”",
+  ["which","whom","whose","where"],
+  1,
+  "“Whom” can be used as the object for a person in formal English.",
+  {type:"language"}
+);
 
-add("English",
-“She's a talented engineer, ___?”",
-["isn't she","doesn't she","wasn't she","hasn't she"],0,
-“The main clause is positive with ‘is’, so the tag is ‘isn't she?’.”",
-{type:"language"});
+add(
+  "English",
+  "She's a talented engineer, ___?",
+  ["isn't she","doesn't she","wasn't she","hasn't she"],
+  0,
+  "The main clause is positive with “is”, so the tag is “isn't she?”.",
+  {type:"language"}
+);
 
-add("English",
-“They haven't finished the project, ___?”",
-["have they","haven't they","did they","do they"],0,
-"Negative present perfect takes a positive tag: have they?",
-{type:"language"});
+add(
+  "English",
+  "They haven't finished the project, ___?",
+  ["have they","haven't they","did they","do they"],
+  0,
+  "Negative present perfect takes a positive tag: have they?",
+  {type:"language"}
+);
 
-add("English",
-“You went there yesterday, ___?”",
-["didn't you","don't you","haven't you","weren't you"],0,
-"Simple past takes the auxiliary did in the tag.",
-{type:"language"});
+add(
+  "English",
+  "You went there yesterday, ___?",
+  ["didn't you","don't you","haven't you","weren't you"],
+  0,
+  "Simple past takes the auxiliary did in the tag.",
+  {type:"language"}
+);
 
-add("English",
-"What does “go the extra mile” mean?",
-["To give additional effort","To travel exactly one mile","To give up","To arrive late"],0,
-"It means to make more effort than expected.",
-{type:"idiom"});
+add(
+  "English",
+  "What does “go the extra mile” mean?",
+  ["To give additional effort","To travel exactly one mile","To give up","To arrive late"],
+  0,
+  "It means to make more effort than expected.",
+  {type:"idiom"}
+);
 
-add("English",
-"What does “hit the nail on the head” mean?",
-["To make a mistake","To be exactly right","To become angry","To repair a clock"],1,
-"It means to describe or identify something exactly.",
-{type:"idiom"});
+add(
+  "English",
+  "What does “hit the nail on the head” mean?",
+  ["To make a mistake","To be exactly right","To become angry","To repair a clock"],
+  1,
+  "It means to describe or identify something exactly.",
+  {type:"idiom"}
+);
 
-add("English",
-"What does “once in a blue moon” mean?",
-["Very frequently","Very rarely","Immediately","Never"],1,
-"It means something happens very rarely.",
-{type:"idiom"});
+add(
+  "English",
+  "What does “once in a blue moon” mean?",
+  ["Very frequently","Very rarely","Immediately","Never"],
+  1,
+  "It means something happens very rarely.",
+  {type:"idiom"}
+);
 
-add("English",
-"If Miriam ___ the offer, she would become rich.",
-["accepts","accepted","will accept","has accepted"],1,
-"Second conditional: If + past simple + would.",
-{type:"grammar"});
+add(
+  "English",
+  "If Miriam ___ the offer, she would become rich.",
+  ["accepts","accepted","will accept","has accepted"],
+  1,
+  "Second conditional: If + past simple + would.",
+  {type:"grammar"}
+);
 
-add("English",
-"By next year, they ___ the entire collection.",
-["restore","restored","will have restored","have restored"],2,
-"“By next year” commonly requires the future perfect for a completed future action.",
-{type:"grammar"});
+add(
+  "English",
+  "By next year, they ___ the entire collection.",
+  ["restore","restored","will have restored","have restored"],
+  2,
+  "“By next year” commonly requires the future perfect for a completed future action.",
+  {type:"grammar"}
+);
 
-add("English",
-"She ___ repairing clocks for twenty years before she retired.",
-["has been","had been","was","is"],1,
-"Past perfect continuous describes an activity continuing before another past event.",
-{type:"grammar"});
+add(
+  "English",
+  "She ___ repairing clocks for twenty years before she retired.",
+  ["has been","had been","was","is"],
+  1,
+  "Past perfect continuous describes an activity continuing before another past event.",
+  {type:"grammar"}
+);
 
-add("English",
-"Choose the correct sentence.",
-["I wish I know the answer.","I wish I knew the answer.","I wish I will know the answer.","I wish I had know the answer."],1,
-"Present unreal wish uses the past simple: I wish I knew.",
-{type:"grammar"});
+add(
+  "English",
+  "Choose the correct sentence:",
+  ["I wish I know the answer.","I wish I knew the answer.","I wish I will know the answer.","I wish I had know the answer."],
+  1,
+  "Present unreal wish uses the past simple: I wish I knew.",
+  {type:"grammar"}
+);
 
-add("English",
-"Choose the correct passive form: “People repaired the clock.”",
-["The clock repaired people.","The clock was repaired.","The clock has repair.","The clock is repairing."],1,
-"Simple past passive = was/were + past participle.",
-{type:"grammar"});
+add(
+  "English",
+  "Choose the correct passive form: “People repaired the clock.”",
+  ["The clock repaired people.","The clock was repaired.","The clock has repair.","The clock is repairing."],
+  1,
+  "Simple past passive = was/were + past participle.",
+  {type:"grammar"}
+);
 
-add("English",
-"Choose the correct sentence.",
-["The person whose workshop we visited was Miriam.","The person who's workshop we visited was Miriam.","The person whom workshop we visited was Miriam.","The person which workshop we visited was Miriam."],0,
-"“Whose” expresses possession: Miriam's workshop.",
-{type:"grammar"});
+add(
+  "English",
+  "Choose the correct sentence:",
+  ["The person whose workshop we visited was Miriam.","The person who's workshop we visited was Miriam.","The person whom workshop we visited was Miriam.","The person which workshop we visited was Miriam."],
+  0,
+  "“Whose” expresses possession: Miriam's workshop.",
+  {type:"grammar"}
+);
 
 
 /* =====================================================
    FRANÇAIS — 25
 ===================================================== */
 
-/* 10 compréhension */
+/* COMPREHENSION */
 
-add("Français",
-"Pourquoi la vieille gare était-elle considérée comme insignifiante au début du texte ?",
-["Elle était trop moderne.","Elle était abandonnée et ne servait plus au transport.","Elle appartenait à Salomé.","Elle avait été transformée en musée."],1,
-"Elle était abandonnée depuis plusieurs décennies et perçue comme une ruine.",
-{type:"comprehension"});
+add(
+  "Français",
+  "Pourquoi la vieille gare était-elle considérée comme insignifiante au début du texte ?",
+  ["Elle était trop moderne.","Elle était abandonnée et ne servait plus au transport.","Elle appartenait à Salomé.","Elle avait été transformée en musée."],
+  1,
+  "Elle était abandonnée depuis plusieurs décennies et perçue comme une ruine.",
+  {type:"comprehension"}
+);
 
-add("Français",
-"Que découvre Salomé derrière une armoire renversée ?",
-["Une machine industrielle.","Des carnets et archives anciennes.","De l'argent.","Une ancienne locomotive."],1,
-"Elle découvre des dizaines de carnets appartenant à différents travailleurs.",
-{type:"comprehension"});
+add(
+  "Français",
+  "Que découvre Salomé derrière une armoire renversée ?",
+  ["Une machine industrielle.","Des carnets et archives anciennes.","De l'argent.","Une ancienne locomotive."],
+  1,
+  "Elle découvre des dizaines de carnets appartenant à différents travailleurs.",
+  {type:"comprehension"}
+);
 
-add("Français",
-"Quelle différence caractérise le carnet d'Augustin ?",
-["Il ne parle que de machines.","Il s'intéresse surtout aux personnes et à leur quotidien.","Il est écrit en anglais.","Il ne contient aucune observation."],1,
-"Augustin observe surtout les voyageurs, les familles et les événements humains.",
-{type:"comprehension"});
+add(
+  "Français",
+  "Quelle différence caractérise le carnet d'Augustin ?",
+  ["Il ne parle que de machines.","Il s'intéresse surtout aux personnes et à leur quotidien.","Il est écrit en anglais.","Il ne contient aucune observation."],
+  1,
+  "Augustin observe surtout les voyageurs, les familles et les événements humains.",
+  {type:"comprehension"}
+);
 
-add("Français",
-"Quelle conception de l'histoire Salomé finit-elle par défendre ?",
-["Elle est uniquement produite par les dirigeants.","Elle est constituée aussi par les vies ordinaires.","Elle ne concerne que les guerres.","Elle doit être oubliée."],1,
-"Le texte insiste sur le rôle des personnes anonymes dans la construction historique.",
-{type:"comprehension"});
+add(
+  "Français",
+  "Quelle conception de l'histoire Salomé finit-elle par défendre ?",
+  ["Elle est uniquement produite par les dirigeants.","Elle est constituée aussi par les vies ordinaires.","Elle ne concerne que les guerres.","Elle doit être oubliée."],
+  1,
+  "Le texte insiste sur le rôle des personnes anonymes dans la construction historique.",
+  {type:"comprehension"}
+);
 
-add("Français",
-"Pourquoi certains responsables municipaux sont-ils initialement sceptiques ?",
-["Ils ne savent pas lire les archives.","Ils considèrent d'autres problèmes urbains comme prioritaires.","Ils veulent détruire la gare pour des raisons historiques.","Ils refusent toute restauration."],1,
-"Le chômage, les transports et les infrastructures leur paraissent plus urgents.",
-{type:"comprehension"});
+add(
+  "Français",
+  "Pourquoi certains responsables municipaux sont-ils initialement sceptiques ?",
+  ["Ils ne savent pas lire les archives.","Ils considèrent d'autres problèmes urbains comme prioritaires.","Ils veulent détruire la gare pour des raisons historiques.","Ils refusent toute restauration."],
+  1,
+  "Le chômage, les transports et les infrastructures leur paraissent plus urgents.",
+  {type:"comprehension"}
+);
 
-add("Français",
-"Quel élément provoque un changement important dans l'opinion publique ?",
-["La vente de la gare.","Les lettres apportées par Madeleine Ilunga.","La disparition des archives.","Une catastrophe naturelle."],1,
-"Les lettres authentifiées révèlent l'importance d'un épisode social oublié.",
-{type:"comprehension"});
+add(
+  "Français",
+  "Quel élément provoque un changement important dans l'opinion publique ?",
+  ["La vente de la gare.","Les lettres apportées par Madeleine Ilunga.","La disparition des archives.","Une catastrophe naturelle."],
+  1,
+  "Les lettres authentifiées révèlent l'importance d'un épisode social oublié.",
+  {type:"comprehension"}
+);
 
-add("Français",
-"Pourquoi certaines traces anciennes sont-elles volontairement conservées après la restauration ?",
-["Pour empêcher les visiteurs d'entrer.","Pour préserver la mémoire matérielle du lieu.","Parce que les travaux étaient impossibles.","Pour réduire le coût du projet uniquement."],1,
-"Les murs, inscriptions et rails conservés matérialisent l'histoire du lieu.",
-{type:"comprehension"});
+add(
+  "Français",
+  "Pourquoi certaines traces anciennes sont-elles volontairement conservées après la restauration ?",
+  ["Pour empêcher les visiteurs d'entrer.","Pour préserver la mémoire matérielle du lieu.","Parce que les travaux étaient impossibles.","Pour réduire le coût du projet uniquement."],
+  1,
+  "Les murs, inscriptions et rails conservés matérialisent l'histoire du lieu.",
+  {type:"comprehension"}
+);
 
-add("Français",
-"Que signifie l'expression « empêcher le présent de devenir amnésique » ?",
-["Empêcher les gens de dormir.","Empêcher la société d'oublier son passé.","Empêcher les médecins de travailler.","Empêcher les archives de disparaître physiquement uniquement."],1,
-"Il s'agit métaphoriquement de préserver la mémoire historique.",
-{type:"comprehension"});
+add(
+  "Français",
+  "Que signifie l'expression « empêcher le présent de devenir amnésique » ?",
+  ["Empêcher les gens de dormir.","Empêcher la société d'oublier son passé.","Empêcher les médecins de travailler.","Empêcher les archives de disparaître physiquement uniquement."],
+  1,
+  "Il s'agit métaphoriquement de préserver la mémoire historique.",
+  {type:"comprehension"}
+);
 
-add("Français",
-"Quelle transformation essentielle la gare connaît-elle ?",
-["Elle devient un centre de mémoire et d'archives.","Elle devient une usine.","Elle devient une résidence privée.","Elle est détruite."],0,
-"Elle est transformée en centre consacré à la mémoire urbaine.",
-{type:"comprehension"});
+add(
+  "Français",
+  "Quelle transformation essentielle la gare connaît-elle ?",
+  ["Elle devient un centre de mémoire et d'archives.","Elle devient une usine.","Elle devient une résidence privée.","Elle est détruite."],
+  0,
+  "Elle est transformée en centre consacré à la mémoire urbaine.",
+  {type:"comprehension"}
+);
 
-add("Français",
-"Quelle est la thèse centrale du texte ?",
-["Le passé doit remplacer le présent.","La mémoire collective aide une société à comprendre son présent et son avenir.","Les ruines doivent toutes être restaurées.","Les archives économiques sont inutiles."],1,
-"Le texte défend l'idée que la mémoire permet de comprendre les choix présents et futurs.",
-{type:"comprehension"});
+add(
+  "Français",
+  "Quelle est la thèse centrale du texte ?",
+  ["Le passé doit remplacer le présent.","La mémoire collective aide une société à comprendre son présent et son avenir.","Les ruines doivent toutes être restaurées.","Les archives économiques sont inutiles."],
+  1,
+  "Le texte défend l'idée que la mémoire permet de comprendre les choix présents et futurs.",
+  {type:"comprehension"}
+);
 
 
-/* 15 langue */
+/* LANGUE */
 
-add("Français",
-"Dans « une richesse qui n'apparaissait dans aucun bilan économique », le mot « richesse » est employé :",
-["Au sens uniquement financier","Au sens figuré","Comme un nom propre","Comme un terme scientifique"],1,
-"Il désigne ici une richesse culturelle et mémorielle.",
-{type:"language"});
+add(
+  "Français",
+  "Dans « une richesse qui n'apparaissait dans aucun bilan économique », le mot « richesse » est employé :",
+  ["Au sens uniquement financier","Au sens figuré","Comme un nom propre","Comme un terme scientifique"],
+  1,
+  "Il désigne ici une richesse culturelle et mémorielle.",
+  {type:"language"}
+);
 
-add("Français",
-"« La gare devint un lieu où le temps semblait dialoguer avec le présent » contient principalement :",
-["Une métaphore","Une litote","Une gradation","Une périphrase"],0,
-"Le temps est présenté comme capable de dialoguer : image métaphorique.",
-{type:"figure"});
+add(
+  "Français",
+  "« La gare devint un lieu où le temps semblait dialoguer avec le présent » contient principalement :",
+  ["Une métaphore","Une litote","Une gradation","Une périphrase"],
+  0,
+  "Le temps est présenté comme capable de dialoguer : image métaphorique.",
+  {type:"figure"}
+);
 
-add("Français",
-"« Elle ne voulait pas glorifier le passé, mais empêcher le présent de devenir amnésique » repose notamment sur :",
-["Une antithèse","Une comparaison","Une hyperbole numérique","Une onomatopée"],0,
-"Le passé et le présent sont mis en opposition.",
-{type:"figure"});
+add(
+  "Français",
+  "« Elle ne voulait pas glorifier le passé, mais empêcher le présent de devenir amnésique » repose notamment sur :",
+  ["Une antithèse","Une comparaison","Une hyperbole numérique","Une onomatopée"],
+  0,
+  "Le passé et le présent sont mis en opposition.",
+  {type:"figure"}
+);
 
-add("Français",
-"Quelle figure trouve-t-on dans « une obscure clarté » ?",
-["Chiasme","Oxymore","Anaphore","Métonymie"],1,
-"Deux termes contradictoires sont associés.",
-{type:"figure"});
+add(
+  "Français",
+  "Quelle figure trouve-t-on dans « une obscure clarté » ?",
+  ["Chiasme","Oxymore","Anaphore","Métonymie"],
+  1,
+  "Deux termes contradictoires sont associés.",
+  {type:"figure"}
+);
 
-add("Français",
-"« Ce n'est pas mauvais » pour signifier « c'est plutôt bon » constitue une :",
-["Hyperbole","Litote","Antithèse","Personnification"],1,
-"La litote exprime une idée forte par une formulation atténuée.",
-{type:"figure"});
+add(
+  "Français",
+  "« Ce n'est pas mauvais » pour signifier « c'est plutôt bon » constitue une :",
+  ["Hyperbole","Litote","Antithèse","Personnification"],
+  1,
+  "La litote exprime une idée forte par une formulation atténuée.",
+  {type:"figure"}
+);
 
-add("Français",
-"« Paris s'est réveillé » pour désigner les habitants de Paris constitue une :",
-["Métonymie","Gradation","Chiasme","Allitération"],0,
-"Le lieu désigne les personnes qui l'habitent : métonymie.",
-{type:"figure"});
+add(
+  "Français",
+  "« Paris s'est réveillé » pour désigner les habitants de Paris constitue une :",
+  ["Métonymie","Gradation","Chiasme","Allitération"],
+  0,
+  "Le lieu désigne les personnes qui l'habitent : métonymie.",
+  {type:"figure"}
+);
 
-add("Français",
-"Quelle proposition est correctement orthographiée ?",
-["Malgrès les difficultés","Malgré les difficultés","Malgrés les difficultés","Mal gré les difficultés"],1,
-"La forme correcte est « malgré ».",
-{type:"orthographe"});
+add(
+  "Français",
+  "Quelle proposition est correctement orthographiée ?",
+  ["Malgrès les difficultés","Malgré les difficultés","Malgrés les difficultés","Mal gré les difficultés"],
+  1,
+  "La forme correcte est « malgré ».",
+  {type:"orthographe"}
+);
 
-add("Français",
-"Complétez : « Les lettres qu'elle a ___ hier sont authentiques. »",
-["retrouvé","retrouvées","retrouvés","retrouvée"],1,
-"Le COD « les lettres » est placé avant le participe passé : retrouvées.",
-{type:"grammaire"});
+add(
+  "Français",
+  "Complétez : « Les lettres qu'elle a ___ hier sont authentiques. »",
+  ["retrouvé","retrouvées","retrouvés","retrouvée"],
+  1,
+  "Le COD « les lettres » est placé avant le participe passé : retrouvées.",
+  {type:"grammaire"}
+);
 
-add("Français",
-"Dans « Bien qu'il soit tard, nous continuerons », « bien que » introduit :",
-["Un indicatif obligatoire","Un subjonctif","Un infinitif","Un conditionnel"],1,
-"« Bien que » est suivi du subjonctif.",
-{type:"grammaire"});
+add(
+  "Français",
+  "Dans « Bien qu'il soit tard, nous continuerons », « bien que » introduit :",
+  ["Un indicatif obligatoire","Un subjonctif","Un infinitif","Un conditionnel"],
+  1,
+  "« Bien que » est suivi du subjonctif.",
+  {type:"grammaire"}
+);
 
-add("Français",
-"Le verbe « eût compris » est au :",
-["Plus-que-parfait de l'indicatif","Passé antérieur","Plus-que-parfait du subjonctif","Conditionnel passé"],2,
-"« eût compris » est le plus-que-parfait du subjonctif.",
-{type:"conjugaison"});
+add(
+  "Français",
+  "Le verbe « eût compris » est au :",
+  ["Plus-que-parfait de l'indicatif","Passé antérieur","Plus-que-parfait du subjonctif","Conditionnel passé"],
+  2,
+  "« eût compris » est le plus-que-parfait du subjonctif.",
+  {type:"conjugaison"}
+);
 
-add("Français",
-"Dans « Si j'avais su, je serais venu », la proposition introduite par « si » exprime :",
-["Une condition irréelle du passé","Une certitude","Une conséquence actuelle","Une comparaison"],0,
-"Si + plus-que-parfait et conditionnel passé expriment une hypothèse irréalisée dans le passé.",
-{type:"grammaire"});
+add(
+  "Français",
+  "Dans « Si j'avais su, je serais venu », la proposition introduite par « si » exprime :",
+  ["Une condition irréelle du passé","Une certitude","Une conséquence actuelle","Une comparaison"],
+  0,
+  "Si + plus-que-parfait et conditionnel passé expriment une hypothèse irréalisée dans le passé.",
+  {type:"grammaire"}
+);
 
-add("Français",
-"Quelle phrase contient un chiasme ?",
-["Il faut manger pour vivre et non vivre pour manger.","Le soleil brille.","La ville grandit rapidement.","Les archives sont anciennes."],0,
-"Organisation croisée ABBA : manger/vivre puis vivre/manger.",
-{type:"figure"});
+add(
+  "Français",
+  "Quelle phrase contient un chiasme ?",
+  ["Il faut manger pour vivre et non vivre pour manger.","Le soleil brille.","La ville grandit rapidement.","Les archives sont anciennes."],
+  0,
+  "Organisation croisée ABBA : manger/vivre puis vivre/manger.",
+  {type:"figure"}
+);
 
-add("Français",
-"Quelle phrase contient une anaphore ?",
-["Je veux comprendre, je veux apprendre, je veux progresser.","La gare est ancienne.","Les murs sont rouges.","Il arrive demain."],0,
-"« Je veux » est répété en début de plusieurs groupes.",
-{type:"figure"});
+add(
+  "Français",
+  "Quelle phrase contient une anaphore ?",
+  ["Je veux comprendre, je veux apprendre, je veux progresser.","La gare est ancienne.","Les murs sont rouges.","Il arrive demain."],
+  0,
+  "« Je veux » est répété en début de plusieurs groupes.",
+  {type:"figure"}
+);
 
-add("Français",
-"Quel mot est un adverbe dans « Il travaille particulièrement bien » ?",
-["travaille","particulièrement","bien","il"],1,
-"« particulièrement » est un adverbe.",
-{type:"vocabulaire"});
+add(
+  "Français",
+  "Quel mot est un adverbe dans « Il travaille particulièrement bien » ?",
+  ["travaille","particulièrement","bien","il"],
+  1,
+  "« particulièrement » est un adverbe.",
+  {type:"vocabulaire"}
+);
 
-add("Français",
-"Quel terme est le plus proche de « pérenne » ?",
-["Fragile","Durable","Immédiat","Éphémère"],1,
-"Pérenne signifie durable, qui se maintient dans le temps.",
-{type:"vocabulaire"});
+add(
+  "Français",
+  "Quel terme est le plus proche de « pérenne » ?",
+  ["Fragile","Durable","Immédiat","Éphémère"],
+  1,
+  "Pérenne signifie durable, qui se maintient dans le temps.",
+  {type:"vocabulaire"}
+);
 
 
 /* =====================================================
    CULTURE GÉNÉRALE — 25
 ===================================================== */
 
-add("Culture générale",
-"Le parc national des Virunga se trouve principalement dans quelle province de la RDC ?",
-["Nord-Kivu","Kasaï","Haut-Uélé","Lualaba"],0,
-"Le parc des Virunga est situé dans l'est de la RDC, principalement au Nord-Kivu.");
+add(
+  "Culture générale",
+  "Le parc national des Virunga se trouve principalement dans quelle province de la RDC ?",
+  ["Nord-Kivu","Kasaï","Haut-Uélé","Lualaba"],
+  0,
+  "Le parc des Virunga est situé dans l'est de la RDC, principalement au Nord-Kivu."
+);
 
-add("Culture générale",
-"Le parc national de Kahuzi-Biega est particulièrement célèbre pour :",
-["Les gorilles de Grauer","Les lions du Katanga","Les girafes","Les manchots"],0,
-"Kahuzi-Biega est un important habitat du gorille de Grauer.");
+add(
+  "Culture générale",
+  "Le parc national de Kahuzi-Biega est particulièrement célèbre pour :",
+  ["Les gorilles de Grauer","Les lions du Katanga","Les girafes","Les manchots"],
+  0,
+  "Kahuzi-Biega est un important habitat du gorille de Grauer."
+);
 
-add("Culture générale",
-"Le parc national de Garamba se situe principalement dans :",
-["Sud-Kivu","Haut-Uélé","Kongo-Central","Tanganyika"],1,
-"Garamba se situe dans le nord-est de la RDC, dans le Haut-Uélé.");
+add(
+  "Culture générale",
+  "Le parc national de Garamba se situe principalement dans :",
+  ["Sud-Kivu","Haut-Uélé","Kongo-Central","Tanganyika"],
+  1,
+  "Garamba se situe dans le nord-est de la RDC, dans le Haut-Uélé."
+);
 
-add("Culture générale",
-"Quel ancien nom colonial correspond à l'actuelle Kinshasa ?",
-["Stanleyville","Léopoldville","Élisabethville","Coquilhatville"],1,
-"Kinshasa fut appelée Léopoldville pendant la période coloniale.");
+add(
+  "Culture générale",
+  "Quel ancien nom colonial correspond à l'actuelle Kinshasa ?",
+  ["Stanleyville","Léopoldville","Élisabethville","Coquilhatville"],
+  1,
+  "Kinshasa fut appelée Léopoldville pendant la période coloniale."
+);
 
-add("Culture générale",
-"Quelle ville portait autrefois le nom d'Élisabethville ?",
-["Lubumbashi","Kisangani","Mbandaka","Kananga"],0,
-"Élisabethville est l'ancien nom colonial de Lubumbashi.");
+add(
+  "Culture générale",
+  "Quelle ville portait autrefois le nom d'Élisabethville ?",
+  ["Lubumbashi","Kisangani","Mbandaka","Kananga"],
+  0,
+  "Élisabethville est l'ancien nom colonial de Lubumbashi."
+);
 
-add("Culture générale",
-"Stanleyville correspond à l'actuelle ville de :",
-["Bukavu","Kisangani","Goma","Kolwezi"],1,
-"Stanleyville est l'ancien nom de Kisangani.");
+add(
+  "Culture générale",
+  "Stanleyville correspond à l'actuelle ville de :",
+  ["Bukavu","Kisangani","Goma","Kolwezi"],
+  1,
+  "Stanleyville est l'ancien nom de Kisangani."
+);
 
-add("Culture générale",
-"Coquilhatville correspond à l'actuelle :",
-["Mbandaka","Likasi","Kananga","Bunia"],0,
-"Mbandaka était appelée Coquilhatville.");
+add(
+  "Culture générale",
+  "Coquilhatville correspond à l'actuelle :",
+  ["Mbandaka","Likasi","Kananga","Bunia"],
+  0,
+  "Mbandaka était appelée Coquilhatville."
+);
 
-add("Culture générale",
-"Quel est le chef-lieu du Haut-Katanga ?",
-["Kolwezi","Lubumbashi","Likasi","Kipushi"],1,
-"Lubumbashi est le chef-lieu du Haut-Katanga.");
+add(
+  "Culture générale",
+  "Quel est le chef-lieu du Haut-Katanga ?",
+  ["Kolwezi","Lubumbashi","Likasi","Kipushi"],
+  1,
+  "Lubumbashi est le chef-lieu du Haut-Katanga."
+);
 
-add("Culture générale",
-"Quel est le chef-lieu du Lualaba ?",
-["Lubumbashi","Kolwezi","Goma","Kananga"],1,
-"Kolwezi est le chef-lieu du Lualaba.");
+add(
+  "Culture générale",
+  "Quel est le chef-lieu du Lualaba ?",
+  ["Lubumbashi","Kolwezi","Goma","Kananga"],
+  1,
+  "Kolwezi est le chef-lieu du Lualaba."
+);
 
-add("Culture générale",
-"Quel est le chef-lieu du Kasaï-Central ?",
-["Tshikapa","Kananga","Mbuji-Mayi","Kabinda"],1,
-"Kananga est le chef-lieu du Kasaï-Central.");
+add(
+  "Culture générale",
+  "Quel est le chef-lieu du Kasaï-Central ?",
+  ["Tshikapa","Kananga","Mbuji-Mayi","Kabinda"],
+  1,
+  "Kananga est le chef-lieu du Kasaï-Central."
+);
 
-add("Culture générale",
-"Le fleuve Congo se jette dans :",
-["L'océan Indien","L'océan Atlantique","La mer Méditerranée","Le golfe d'Aden"],1,
-"Le fleuve Congo se jette dans l'océan Atlantique.");
+add(
+  "Culture générale",
+  "Le fleuve Congo se jette dans :",
+  ["L'océan Indien","L'océan Atlantique","La mer Méditerranée","Le golfe d'Aden"],
+  1,
+  "Le fleuve Congo se jette dans l'océan Atlantique."
+);
 
-add("Culture générale",
-"Le lac Kivu est partagé principalement entre la RDC et :",
-["La Zambie","Le Rwanda","L'Ouganda","Le Burundi uniquement"],1,
-"Le lac Kivu se trouve à la frontière entre la RDC et le Rwanda.");
+add(
+  "Culture générale",
+  "Le lac Kivu est partagé principalement entre la RDC et :",
+  ["La Zambie","Le Rwanda","L'Ouganda","Le Burundi uniquement"],
+  1,
+  "Le lac Kivu se trouve à la frontière entre la RDC et le Rwanda."
+);
 
-add("Culture générale",
-"Lequel de ces pays n'est pas riverain du lac Tanganyika ?",
-["RDC","Tanzanie","Burundi","Rwanda"],3,
-"Le Rwanda n'est pas riverain du lac Tanganyika.");
+add(
+  "Culture générale",
+  "Lequel de ces pays n'est pas riverain du lac Tanganyika ?",
+  ["RDC","Tanzanie","Burundi","Rwanda"],
+  3,
+  "Le Rwanda n'est pas riverain du lac Tanganyika."
+);
 
-add("Culture générale",
-"La RDC a accédé à l'indépendance le :",
-["30 juin 1958","30 juin 1960","1er juillet 1960","17 janvier 1961"],1,
-"L'indépendance de la RDC fut proclamée le 30 juin 1960.");
+add(
+  "Culture générale",
+  "La RDC a accédé à l'indépendance le :",
+  ["30 juin 1958","30 juin 1960","1er juillet 1960","17 janvier 1961"],
+  1,
+  "L'indépendance de la RDC fut proclamée le 30 juin 1960."
+);
 
-add("Culture générale",
-"Qui fut le premier Premier ministre du Congo indépendant ?",
-["Joseph Kasa-Vubu","Patrice Lumumba","Mobutu","Moïse Tshombe"],1,
-"Patrice Lumumba fut le premier Premier ministre du Congo indépendant.");
+add(
+  "Culture générale",
+  "Qui fut le premier Premier ministre du Congo indépendant ?",
+  ["Joseph Kasa-Vubu","Patrice Lumumba","Mobutu","Moïse Tshombe"],
+  1,
+  "Patrice Lumumba fut le premier Premier ministre du Congo indépendant."
+);
 
-add("Culture générale",
-"Qui fut le premier président de la République du Congo indépendant ?",
-["Patrice Lumumba","Joseph Kasa-Vubu","Mobutu","Laurent-Désiré Kabila"],1,
-"Joseph Kasa-Vubu fut le premier président.");
+add(
+  "Culture générale",
+  "Qui fut le premier président de la République du Congo indépendant ?",
+  ["Patrice Lumumba","Joseph Kasa-Vubu","Mobutu","Laurent-Désiré Kabila"],
+  1,
+  "Joseph Kasa-Vubu fut le premier président."
+);
 
-add("Culture générale",
-"En 1971, la République démocratique du Congo prit officiellement le nom de :",
-["Congo populaire","Zaïre","Congo fédéral","République du Congo"],1,
-"Le pays prit le nom de Zaïre sous Mobutu.");
+add(
+  "Culture générale",
+  "En 1971, la République démocratique du Congo prit officiellement le nom de :",
+  ["Congo populaire","Zaïre","Congo fédéral","République du Congo"],
+  1,
+  "Le pays prit le nom de Zaïre sous Mobutu."
+);
 
-add("Culture générale",
-"Le siège de l'Union africaine se trouve à :",
-["Nairobi","Addis-Abeba","Lagos","Le Caire"],1,
-"Le siège de l'Union africaine est à Addis-Abeba.");
+add(
+  "Culture générale",
+  "Le siège de l'Union africaine se trouve à :",
+  ["Nairobi","Addis-Abeba","Lagos","Le Caire"],
+  1,
+  "Le siège de l'Union africaine est à Addis-Abeba."
+);
 
-add("Culture générale",
-"Le siège principal de l'Organisation des Nations unies se trouve à :",
-["Genève","New York","Paris","Bruxelles"],1,
-"Le siège principal de l'ONU est à New York.");
+add(
+  "Culture générale",
+  "Le siège principal de l'Organisation des Nations unies se trouve à :",
+  ["Genève","New York","Paris","Bruxelles"],
+  1,
+  "Le siège principal de l'ONU est à New York."
+);
 
-add("Culture générale",
-"La Seconde Guerre mondiale s'est déroulée principalement de :",
-["1914 à 1918","1939 à 1945","1945 à 1950","1935 à 1940"],1,
-"La Seconde Guerre mondiale s'étend de 1939 à 1945.");
+add(
+  "Culture générale",
+  "La Seconde Guerre mondiale s'est déroulée principalement de :",
+  ["1914 à 1918","1939 à 1945","1945 à 1950","1935 à 1940"],
+  1,
+  "La Seconde Guerre mondiale s'étend de 1939 à 1945."
+);
 
-add("Culture générale",
-"Le 5 octobre 2026, des facilitateurs de l'Union africaine se sont rendus à Goma principalement pour :",
-["Une compétition sportive","Des consultations liées au processus de paix en RDC","Une réunion minière","Une conférence scolaire"],1,
-"Une délégation du Panel des facilitateurs de l'UA s'est rendue à Goma dans le cadre des efforts de paix dans l'Est de la RDC.");
+add(
+  "Culture générale",
+  "Le 5 octobre 2026, des facilitateurs de l'Union africaine se sont rendus à Goma principalement pour :",
+  ["Une compétition sportive","Des consultations liées au processus de paix en RDC","Une réunion minière","Une conférence scolaire"],
+  1,
+  "Une délégation du Panel des facilitateurs de l'UA s'est rendue à Goma dans le cadre des efforts de paix dans l'Est de la RDC."
+);
 
-add("Culture générale",
-"Qui figurait parmi les personnalités africaines de haut niveau de cette mission de facilitateurs à Goma en octobre 2026 ?",
-["Uhuru Kenyatta","Nelson Mandela","Kofi Annan","Haile Selassie"],0,
-"Uhuru Kenyatta faisait partie de la délégation mentionnée.");
+add(
+  "Culture générale",
+  "Qui figurait parmi les personnalités africaines de haut niveau de cette mission de facilitateurs à Goma en octobre 2026 ?",
+  ["Uhuru Kenyatta","Nelson Mandela","Kofi Annan","Haile Selassie"],
+  0,
+  "Uhuru Kenyatta faisait partie de la délégation mentionnée."
+);
 
-add("Culture générale",
-"La 8e réunion de coordination de mi-année de l'Union africaine, des CER et mécanismes régionaux s'est tenue le 4 octobre 2026 à :",
-["Dakar","El-Alamein","Addis-Abeba","Lusaka"],1,
-"La réunion s'est tenue à El-Alamein, en Égypte.");
+add(
+  "Culture générale",
+  "La 8e réunion de coordination de mi-année de l'Union africaine, des CER et mécanismes régionaux s'est tenue le 4 octobre 2026 à :",
+  ["Dakar","El-Alamein","Addis-Abeba","Lusaka"],
+  1,
+  "La réunion s'est tenue à El-Alamein, en Égypte."
+);
 
-add("Culture générale",
-"Début octobre 2026, l'Union africaine a appelé notamment quels pays à faire preuve de retenue face à des tensions régionales ?",
-["Éthiopie, Érythrée et Égypte","RDC, Angola et Zambie","Kenya, Tanzanie et Ouganda","Ghana, Nigeria et Sénégal"],0,
-"La Commission de l'UA a appelé l'Éthiopie, l'Érythrée et l'Égypte à éviter les actions ou discours susceptibles d'aggraver les tensions.");
+add(
+  "Culture générale",
+  "Début octobre 2026, l'Union africaine a appelé notamment quels pays à faire preuve de retenue face à des tensions régionales ?",
+  ["Éthiopie, Érythrée et Égypte","RDC, Angola et Zambie","Kenya, Tanzanie et Ouganda","Ghana, Nigeria et Sénégal"],
+  0,
+  "La Commission de l'UA a appelé l'Éthiopie, l'Érythrée et l'Égypte à éviter les actions ou discours susceptibles d'aggraver les tensions."
+);
 
-add("Culture générale",
-"Quel enjeu économique mondial était mis en avant début octobre 2026 par la direction du FMI parmi les risques pour la croissance ?",
-["La disparition totale du commerce","Les prix élevés de l'énergie, la dette et les risques liés à l'IA","La fin de l'agriculture mondiale","La suppression des monnaies nationales"],1,
-"Les risques cités comprenaient notamment le choc énergétique, l'endettement élevé et certains risques liés à l'IA.");
+add(
+  "Culture générale",
+  "Quel enjeu économique mondial était mis en avant début octobre 2026 par la direction du FMI parmi les risques pour la croissance ?",
+  ["La disparition totale du commerce","Les prix élevés de l'énergie, la dette et les risques liés à l'IA","La fin de l'agriculture mondiale","La suppression des monnaies nationales"],
+  1,
+  "Les risques cités comprenaient notamment le choc énergétique, l'endettement élevé et certains risques liés à l'IA."
+);
 
 
 /* =====================================================
-   ÉTAT
+   ÉTAT DU TEST
 ===================================================== */
 
-let index=0;
-let candidate="";
-let selected=null;
-let timer=null;
-let globalTimer=null;
-let startTime=0;
-let answers=[];
-let readingTimers={
-  French:false,
+let index = 0;
+let candidate = "";
+let selected = null;
+
+let questionTimer = null;
+let readingTimer = null;
+let globalTimer = null;
+
+let startTime = 0;
+
+let answers = [];
+
+let readingTimers = {
+  Français:false,
   English:false
 };
 
-const texts={
+let optionsNow = [];
+
+let cheatingIncidents = 0;
+
+let testStarted = false;
+let testFinished = false;
+
+const texts = {
   Français:frenchText,
   English:englishText
 };
+
+
+/* =====================================================
+   OUTILS
+===================================================== */
+
+function formatTime(seconds){
+
+  const s = Math.max(0, Math.floor(seconds));
+
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const sec = s % 60;
+
+  return (
+    String(h).padStart(2,"0") + ":" +
+    String(m).padStart(2,"0") + ":" +
+    String(sec).padStart(2,"0")
+  );
+}
+
+function escapeHTML(value){
+
+  return String(value ?? "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+function shuffle(array){
+
+  const copy = [...array];
+
+  for(let i = copy.length - 1; i > 0; i--){
+
+    const j = Math.floor(Math.random() * (i + 1));
+
+    [copy[i],copy[j]] = [copy[j],copy[i]];
+  }
+
+  return copy;
+}
+
+function paragraphs(text){
+
+  return text
+    .trim()
+    .split(/\n\s*\n/)
+    .map(p => `<p>${escapeHTML(p)}</p>`)
+    .join("");
+}
 
 
 /* =====================================================
@@ -1741,29 +2242,68 @@ const texts={
 
 function startTest(){
 
-  candidate=document.getElementById("name").value.trim();
+  const nameInput = document.getElementById("name");
+
+  if(!nameInput){
+    console.error("Champ nom introuvable.");
+    return;
+  }
+
+  candidate = nameInput.value.trim();
 
   if(!candidate){
+
+    nameInput.focus();
+
     alert("Veuillez entrer votre nom complet.");
+
     return;
   }
 
-  if(Q.length!==100){
-    alert("Erreur : le test doit contenir exactement 100 questions.");
+  if(Q.length !== 100){
+
+    console.error("Nombre de questions :",Q.length);
+
+    alert(
+      "Erreur : le test doit contenir exactement 100 questions.\n\n" +
+      "Questions actuellement présentes : " + Q.length
+    );
+
     return;
   }
+
+  testStarted = true;
+  testFinished = false;
+
+  index = 0;
+  selected = null;
+  answers = [];
+  optionsNow = [];
+  cheatingIncidents = 0;
+
+  readingTimers = {
+    Français:false,
+    English:false
+  };
+
+  clearInterval(questionTimer);
+  clearInterval(readingTimer);
+  clearInterval(globalTimer);
 
   document.getElementById("home").classList.add("hidden");
   document.getElementById("test").classList.remove("hidden");
 
-  startTime=Date.now();
+  startTime = Date.now();
 
-  history.pushState(null,"",location.href);
+  history.pushState(
+    {test:true},
+    "",
+    location.href
+  );
 
-  globalTimer=setInterval(updateGlobal,1000);
+  globalTimer = setInterval(updateGlobal,1000);
 
   render();
-
 }
 
 
@@ -1773,20 +2313,19 @@ function startTest(){
 
 function updateGlobal(){
 
-  let s=Math.floor((Date.now()-startTime)/1000);
+  if(!testStarted || testFinished){
+    return;
+  }
 
-  document.getElementById("global").textContent=formatTime(s);
+  const elapsed = Math.floor(
+    (Date.now() - startTime) / 1000
+  );
 
-}
+  const global = document.getElementById("global");
 
-function formatTime(s){
-
-  let h=Math.floor(s/3600);
-  let m=Math.floor((s%3600)/60);
-  let sec=s%60;
-
-  return `${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}:${String(sec).padStart(2,"0")}`;
-
+  if(global){
+    global.textContent = formatTime(elapsed);
+  }
 }
 
 
@@ -1796,104 +2335,134 @@ function formatTime(s){
 
 function render(){
 
-  clearInterval(timer);
+  clearInterval(questionTimer);
+  clearInterval(readingTimer);
 
-  if(index===25 && !readingTimers.French){
+  if(index === 25 && !readingTimers.Français){
+
     reading("Français");
+
     return;
   }
 
-  if(index===50 && !readingTimers.English){
+  if(index === 50 && !readingTimers.English){
+
     reading("English");
+
     return;
   }
 
   showQuestion();
-
 }
 
 
 function reading(subject){
 
-  let remaining=900;
+  clearInterval(readingTimer);
 
-  document.getElementById("subject").textContent=
-    subject==="Français"?"Lecture — Français":"Reading — English";
+  let remaining = 900;
 
-  document.getElementById("content").innerHTML=`
+  const subjectElement = document.getElementById("subject");
 
-  <div class="reading">
+  if(subjectElement){
 
-    <div class="reading-head">
+    subjectElement.textContent =
+      subject === "Français"
+      ? "Lecture — Français"
+      : "Reading — English";
+  }
 
-      <div>
-        <h1>${subject==="Français"?"LECTURE — FRANÇAIS":"READING — ENGLISH"}</h1>
-        <p>Lecture recommandée avant les questions.</p>
+  const title =
+    subject === "Français"
+    ? "LECTURE — FRANÇAIS"
+    : "READING — ENGLISH";
+
+  document.getElementById("content").innerHTML = `
+
+    <div class="reading">
+
+      <div class="reading-head">
+
+        <div>
+          <h1>${title}</h1>
+          <p>
+            Lecture recommandée avant les questions.
+          </p>
+        </div>
+
+        <div class="read-clock" id="readClock">
+          15:00
+        </div>
+
       </div>
 
-      <div class="read-clock" id="readClock">15:00</div>
+      <article class="read-body">
+        ${paragraphs(texts[subject])}
+      </article>
+
+      <div class="read-foot">
+
+        <span>
+          Tu peux passer aux questions immédiatement.
+          Le temps réellement passé sera conservé dans le temps total.
+        </span>
+
+        <button
+          class="skip"
+          id="skipReadingBtn"
+          type="button"
+        >
+          PASSER AUX QUESTIONS →
+        </button>
+
+      </div>
 
     </div>
-
-    <article class="read-body">
-      ${paragraphs(texts[subject])}
-    </article>
-
-    <div class="read-foot">
-
-      <span>
-        Tu peux passer aux questions immédiatement.
-        Le temps réellement passé sera conservé dans le temps total.
-      </span>
-
-      <button class="skip" onclick="endReading('${subject}')">
-        PASSER AUX QUESTIONS →
-      </button>
-
-    </div>
-
-  </div>
-
   `;
 
-  readingTimers[subject]=true;
+  readingTimers[subject] = true;
 
-  timer=setInterval(()=>{
+  document
+    .getElementById("skipReadingBtn")
+    .addEventListener("click",function(){
+
+      endReading(subject);
+
+    });
+
+  readingTimer = setInterval(function(){
 
     remaining--;
 
-    let m=Math.floor(remaining/60);
-    let s=remaining%60;
-
-    let clock=document.getElementById("readClock");
+    const clock = document.getElementById("readClock");
 
     if(clock){
-      clock.textContent=
-        `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
+
+      const minutes = Math.floor(remaining / 60);
+      const seconds = remaining % 60;
+
+      clock.textContent =
+        String(minutes).padStart(2,"0") +
+        ":" +
+        String(seconds).padStart(2,"0");
     }
 
-    if(remaining<=0){
+    if(remaining <= 0){
+
       endReading(subject);
     }
 
   },1000);
-
 }
 
 
 function endReading(subject){
 
-  clearInterval(timer);
+  clearInterval(readingTimer);
+
+  readingTimers[subject] = true;
+
   render();
-
-}
-
-
-function paragraphs(text){
-
-  return text.trim().split(/\n\s*\n/)
-    .map(p=>`<p>${p}</p>`).join("");
-
 }
 
 
@@ -1903,105 +2472,181 @@ function paragraphs(text){
 
 function showQuestion(){
 
-  let q=Q[index];
+  clearInterval(questionTimer);
 
-  document.getElementById("subject").textContent=q.subject;
+  const q = Q[index];
 
-  let shuffled=q.options
-    .map((text,i)=>({
-      text,
-      correct:i===q.answer
-    }))
-    .sort(()=>Math.random()-.5);
+  if(!q){
 
-  window.optionsNow=shuffled;
-  selected=null;
+    finish();
 
-  let progress=((index+1)/100)*100;
+    return;
+  }
 
-  document.getElementById("content").innerHTML=`
+  const subjectElement = document.getElementById("subject");
 
-  <div class="container">
+  if(subjectElement){
+    subjectElement.textContent = q.subject;
+  }
 
-    <div class="progress-head">
-      <span>${q.subject}</span>
-      <span>${index+1} / 100</span>
-    </div>
+  const shuffled = shuffle(
+    q.options.map(function(text,i){
 
-    <div class="progress-track">
-      <div class="progress" style="width:${progress}%"></div>
-    </div>
+      return {
+        text:text,
+        correct:i === q.answer
+      };
 
-    <div class="card">
+    })
+  );
 
-      <div class="question-top">
+  optionsNow = shuffled;
 
-        <div class="qnum">
-          QUESTION ${index+1}
+  selected = null;
+
+  const progress =
+    ((index + 1) / 100) * 100;
+
+  const canReview =
+    q.subject === "Français" ||
+    q.subject === "English";
+
+  document.getElementById("content").innerHTML = `
+
+    <div class="container">
+
+      <div class="progress-head">
+
+        <span>${escapeHTML(q.subject)}</span>
+
+        <span>
+          ${index + 1} / 100
+        </span>
+
+      </div>
+
+      <div class="progress-track">
+
+        <div
+          class="progress"
+          style="width:${progress}%"
+        ></div>
+
+      </div>
+
+      <div class="card">
+
+        <div class="question-top">
+
+          <div class="qnum">
+            QUESTION ${index + 1}
+          </div>
+
+          <div class="timer" id="timer">
+            01:00
+          </div>
+
         </div>
 
-        <div class="timer" id="timer">
-          01:00
+        <div class="question">
+          ${escapeHTML(q.question)}
+        </div>
+
+        <div class="options">
+
+          ${shuffled.map(function(o,i){
+
+            return `
+              <button
+                class="option"
+                id="opt${i}"
+                type="button"
+                data-option="${i}"
+              >
+
+                <span class="letter">
+                  ${String.fromCharCode(65+i)}
+                </span>
+
+                <span>
+                  ${escapeHTML(o.text)}
+                </span>
+
+              </button>
+            `;
+
+          }).join("")}
+
+        </div>
+
+        <div class="actions">
+
+          ${
+            canReview
+            ?
+            `
+              <button
+                class="review"
+                id="reviewBtn"
+                type="button"
+              >
+                👁 REVOIR LE TEXTE
+              </button>
+            `
+            :
+            ""
+          }
+
+          <button
+            class="next"
+            id="next"
+            type="button"
+            disabled
+          >
+            ${index === 99 ? "TERMINER" : "SUIVANT →"}
+          </button>
+
         </div>
 
       </div>
 
-      <div class="question">
-        ${q.question}
-      </div>
-
-      <div class="options">
-
-        ${shuffled.map((o,i)=>`
-
-        <button
-          class="option"
-          id="opt${i}"
-          onclick="choose(${i})"
-        >
-
-          <span class="letter">
-            ${String.fromCharCode(65+i)}
-          </span>
-
-          <span>${o.text}</span>
-
-        </button>
-
-        `).join("")}
-
-      </div>
-
-      <div class="actions">
-
-      ${
-        (q.subject==="Français" || q.subject==="English")
-        ?
-        `<button class="review" onclick="openText('${q.subject}')">
-        👁 REVOIR LE TEXTE
-        </button>`
-        :""
-      }
-
-      <button
-        class="next"
-        id="next"
-        disabled
-        onclick="nextQuestion()"
-      >
-        ${index===99?"TERMINER":"SUIVANT →"}
-      </button>
-
-      </div>
-
     </div>
-
-  </div>
-
   `;
 
-  startQuestionTimer();
+  document
+    .querySelectorAll(".option")
+    .forEach(function(button){
 
+      button.addEventListener("click",function(){
+
+        choose(
+          Number(button.dataset.option)
+        );
+
+      });
+
+    });
+
+  document
+    .getElementById("next")
+    .addEventListener("click",nextQuestion);
+
+  const reviewBtn =
+    document.getElementById("reviewBtn");
+
+  if(reviewBtn){
+
+    reviewBtn.addEventListener(
+      "click",
+      function(){
+
+        openText(q.subject);
+
+      }
+    );
+  }
+
+  startQuestionTimer();
 }
 
 
@@ -2011,43 +2656,54 @@ function showQuestion(){
 
 function startQuestionTimer(){
 
-  let remaining=60;
+  clearInterval(questionTimer);
 
-  clearInterval(timer);
+  let remaining = 60;
 
-  timer=setInterval(()=>{
+  const timerElement =
+    document.getElementById("timer");
+
+  if(timerElement){
+    timerElement.textContent = "01:00";
+  }
+
+  questionTimer = setInterval(function(){
 
     remaining--;
 
-    let el=document.getElementById("timer");
+    const el =
+      document.getElementById("timer");
 
     if(el){
 
-      el.textContent=
-        `00:${String(remaining).padStart(2,"0")}`;
+      el.textContent =
+        "00:" +
+        String(remaining).padStart(2,"0");
 
-      if(remaining<=10)
+      if(remaining <= 10){
         el.classList.add("warn");
-
+      }
     }
 
-    if(remaining<=0){
+    if(remaining <= 0){
 
-      clearInterval(timer);
+      clearInterval(questionTimer);
 
       saveAnswer();
 
-      if(index<99){
+      if(index < 99){
+
         index++;
+
         render();
+
       }else{
+
         finish();
       }
-
     }
 
   },1000);
-
 }
 
 
@@ -2057,17 +2713,33 @@ function startQuestionTimer(){
 
 function choose(i){
 
-  selected=i;
+  if(i < 0 || i >= optionsNow.length){
+    return;
+  }
 
-  document.querySelectorAll(".option")
-    .forEach(x=>x.classList.remove("selected"));
+  selected = i;
 
-  document.getElementById("opt"+i)
-    .classList.add("selected");
+  document
+    .querySelectorAll(".option")
+    .forEach(function(button){
 
-  document.getElementById("next")
-    .disabled=false;
+      button.classList.remove("selected");
 
+    });
+
+  const chosenButton =
+    document.getElementById("opt" + i);
+
+  if(chosenButton){
+    chosenButton.classList.add("selected");
+  }
+
+  const nextButton =
+    document.getElementById("next");
+
+  if(nextButton){
+    nextButton.disabled = false;
+  }
 }
 
 
@@ -2077,24 +2749,33 @@ function choose(i){
 
 function saveAnswer(){
 
-  if(selected===null){
+  if(selected === null){
 
-    answers[index]={
+    answers[index] = {
       text:"Aucune réponse",
       correct:false
     };
 
     return;
-
   }
 
-  let chosen=window.optionsNow[selected];
+  const chosen =
+    optionsNow[selected];
 
-  answers[index]={
+  if(!chosen){
+
+    answers[index] = {
+      text:"Aucune réponse",
+      correct:false
+    };
+
+    return;
+  }
+
+  answers[index] = {
     text:chosen.text,
     correct:chosen.correct
   };
-
 }
 
 
@@ -2104,19 +2785,20 @@ function saveAnswer(){
 
 function nextQuestion(){
 
-  clearInterval(timer);
+  clearInterval(questionTimer);
 
   saveAnswer();
 
-  if(index===99){
+  if(index === 99){
+
     finish();
+
     return;
   }
 
   index++;
 
   render();
-
 }
 
 
@@ -2126,73 +2808,108 @@ function nextQuestion(){
 
 function openText(subject){
 
-  document.getElementById("modalTitle").textContent=
-    subject==="Français"
-    ?"Texte — Français"
-    :"Text — English";
+  const modal =
+    document.getElementById("modal");
 
-  document.getElementById("modalBody").innerHTML=
+  const title =
+    document.getElementById("modalTitle");
+
+  const body =
+    document.getElementById("modalBody");
+
+  title.textContent =
+    subject === "Français"
+    ? "Texte — Français"
+    : "Text — English";
+
+  body.innerHTML =
     paragraphs(texts[subject]);
 
-  document.getElementById("modal")
-    .classList.remove("hidden");
-
+  modal.classList.remove("hidden");
 }
 
+
 function closeModal(){
-  document.getElementById("modal")
+
+  document
+    .getElementById("modal")
     .classList.add("hidden");
 }
 
 
 /* =====================================================
-   FIN
+   FIN DU TEST
 ===================================================== */
 
 function finish(){
 
-  clearInterval(timer);
+  if(testFinished){
+    return;
+  }
+
+  testFinished = true;
+
+  clearInterval(questionTimer);
+  clearInterval(readingTimer);
   clearInterval(globalTimer);
 
-  let total=0;
+  const totalQuestions = Q.length;
 
-  let scores={
+  let total = 0;
+
+  const scores = {
     "Mathématiques":0,
     "Français":0,
     "English":0,
     "Culture générale":0
   };
 
-  let errors=[];
+  const errors = [];
 
-  Q.forEach((q,i)=>{
+  Q.forEach(function(q,i){
 
-    let r=answers[i];
+    const result = answers[i];
 
-    if(r && r.correct){
+    if(result && result.correct){
 
       total++;
+
       scores[q.subject]++;
 
     }else{
 
       errors.push({
-        number:i+1,
+
+        number:i + 1,
+
         subject:q.subject,
+
         question:q.question,
-        user:r?r.text:"Aucune réponse",
+
+        user:
+          result
+          ? result.text
+          : "Aucune réponse",
+
         correct:q.options[q.answer],
+
         explanation:q.explanation
       });
-
     }
 
   });
 
-  let elapsed=Math.floor((Date.now()-startTime)/1000);
+  const elapsed =
+    Math.floor(
+      (Date.now() - startTime) / 1000
+    );
 
-  showResults(total,scores,errors,elapsed);
-
+  showResults(
+    total,
+    scores,
+    errors,
+    elapsed
+  );
 }
 
 
@@ -2200,234 +2917,424 @@ function finish(){
    RÉSULTATS
 ===================================================== */
 
-function showResults(total,scores,errors,elapsed){
+function showResults(
+  total,
+  scores,
+  errors,
+  elapsed
+){
 
-  document.getElementById("subject").textContent="Résultats";
+  const subjectElement =
+    document.getElementById("subject");
 
-  document.getElementById("content").innerHTML=`
+  if(subjectElement){
+    subjectElement.textContent = "Résultats";
+  }
 
-  <div class="results">
+  const percentage =
+    Math.round((total / 100) * 100);
 
-    <div class="hero-result">
+  document.getElementById("content").innerHTML = `
 
-      <div>
-        <h1>Épreuve terminée</h1>
-        <p>
-          ${escape(candidate)}, voici ton bilan.
-        </p>
-      </div>
+    <div class="results">
 
-      <div class="circle">
+      <div class="hero-result">
+
         <div>
-          <strong>${total}%</strong>
-          <small>${total}/100</small>
+
+          <h1>
+            Épreuve terminée
+          </h1>
+
+          <p>
+            ${escapeHTML(candidate)}, voici ton bilan.
+          </p>
+
         </div>
+
+        <div class="circle">
+
+          <div>
+
+            <strong>
+              ${percentage}%
+            </strong>
+
+            <small>
+              ${total}/100
+            </small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="result-grid">
+
+        <div class="box">
+
+          <small>
+            SCORE
+          </small>
+
+          <strong>
+            ${total}/100
+          </strong>
+
+        </div>
+
+
+        <div class="box">
+
+          <small>
+            POURCENTAGE
+          </small>
+
+          <strong>
+            ${percentage}%
+          </strong>
+
+        </div>
+
+
+        <div class="box">
+
+          <small>
+            ERREURS
+          </small>
+
+          <strong>
+            ${100-total}
+          </strong>
+
+        </div>
+
+
+        <div class="box">
+
+          <small>
+            TEMPS UTILISÉ
+          </small>
+
+          <strong style="font-size:20px">
+            ${formatTime(elapsed)}
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <h2 style="margin:30px 0 15px">
+        Résultats par matière
+      </h2>
+
+
+      <div class="subjects">
+
+        ${Object.entries(scores).map(function(entry){
+
+          const subject = entry[0];
+          const score = entry[1];
+
+          return `
+
+            <div class="subject-box">
+
+              <strong>
+                ${escapeHTML(subject)}
+              </strong>
+
+              <div class="subject-score">
+                ${score}/25
+              </div>
+
+              <small>
+                ${score * 4}%
+              </small>
+
+            </div>
+
+          `;
+
+        }).join("")}
+
+      </div>
+
+
+      <h2 class="error-title">
+        Correction détaillée
+      </h2>
+
+
+      ${
+        errors.length === 0
+
+        ?
+
+        `
+          <div class="box">
+
+            <h3 style="color:#138a48">
+              EXCELLENT — 100/100
+            </h3>
+
+            <p style="margin-top:8px;color:#69707d">
+              Toutes les réponses sont correctes.
+            </p>
+
+          </div>
+        `
+
+        :
+
+        errors.map(function(e){
+
+          return `
+
+            <div class="error">
+
+              <h3>
+                Question ${e.number}
+                — ${escapeHTML(e.subject)}
+              </h3>
+
+              <p style="margin-bottom:9px">
+                ${escapeHTML(e.question)}
+              </p>
+
+              <div class="wrong">
+
+                ✕ Ta réponse :
+                <strong>
+                  ${escapeHTML(e.user)}
+                </strong>
+
+              </div>
+
+              <div class="right">
+
+                ✓ Bonne réponse :
+                <strong>
+                  ${escapeHTML(e.correct)}
+                </strong>
+
+              </div>
+
+              <div class="explain">
+
+                <strong>
+                  Explication :
+                </strong>
+
+                ${escapeHTML(e.explanation)}
+
+              </div>
+
+            </div>
+
+          `;
+
+        }).join("")
+      }
+
+
+      <div class="footer">
+
+        TEST BLANC EXCELLENTIA WANTANSHI
+        • by Nathan
+
       </div>
 
     </div>
-
-
-    <div class="result-grid">
-
-      <div class="box">
-        <small>SCORE</small>
-        <strong>${total}/100</strong>
-      </div>
-
-      <div class="box">
-        <small>POURCENTAGE</small>
-        <strong>${total}%</strong>
-      </div>
-
-      <div class="box">
-        <small>ERREURS</small>
-        <strong>${100-total}</strong>
-      </div>
-
-      <div class="box">
-        <small>TEMPS UTILISÉ</small>
-        <strong style="font-size:20px">${formatTime(elapsed)}</strong>
-      </div>
-
-    </div>
-
-
-    <h2 style="margin:30px 0 15px">
-      Résultats par matière
-    </h2>
-
-
-    <div class="subjects">
-
-      ${Object.entries(scores).map(([s,v])=>`
-
-      <div class="subject-box">
-
-        <strong>${s}</strong>
-
-        <div class="subject-score">
-          ${v}/25
-        </div>
-
-        <small>${v*4}%</small>
-
-      </div>
-
-      `).join("")}
-
-    </div>
-
-
-    <h2 class="error-title">
-      Correction détaillée
-    </h2>
-
-
-    ${
-      errors.length===0
-
-      ?
-
-      `<div class="box">
-        <h3 style="color:#138a48">
-          EXCELLENT — 100/100
-        </h3>
-        <p style="margin-top:8px;color:#69707d">
-          Toutes les réponses sont correctes.
-        </p>
-      </div>`
-
-      :
-
-      errors.map(e=>`
-
-      <div class="error">
-
-        <h3>
-          Question ${e.number} — ${e.subject}
-        </h3>
-
-        <p style="margin-bottom:9px">
-          ${e.question}
-        </p>
-
-        <div class="wrong">
-          ✕ Ta réponse :
-          <strong>${escape(e.user)}</strong>
-        </div>
-
-        <div class="right">
-          ✓ Bonne réponse :
-          <strong>${escape(e.correct)}</strong>
-        </div>
-
-        <div class="explain">
-          <strong>Explication :</strong>
-          ${e.explanation}
-        </div>
-
-      </div>
-
-      `).join("")
-    }
-
-
-    <div class="footer">
-      TEST BLANC EXCELLENTIA WANTANSHI • by Nathan
-    </div>
-
-  </div>
-
   `;
-
 }
 
 
 /* =====================================================
-   SÉCURITÉ
+   SÉCURITÉ / ANTI-TRICHE
 ===================================================== */
 
-document.addEventListener("visibilitychange",()=>{
+document.addEventListener(
+  "visibilitychange",
+  function(){
 
-  if(
-    document.visibilityState==="hidden" &&
-    !document.getElementById("test").classList.contains("hidden") &&
-    index<100
-  ){
+    if(
+      document.visibilityState === "hidden" &&
+      testStarted &&
+      !testFinished
+    ){
 
-    document.getElementById("warning")
-      .classList.remove("hidden");
+      cheatingIncidents++;
+
+      const warning =
+        document.getElementById("warning");
+
+      warning.classList.remove("hidden");
+    }
 
   }
-
-});
+);
 
 
 function closeWarning(){
 
-  document.getElementById("warning")
+  document
+    .getElementById("warning")
     .classList.add("hidden");
-
 }
 
 
-window.addEventListener("beforeunload",(e)=>{
+/* =====================================================
+   EMPÊCHER LE RECHARGEMENT / FERMETURE
+===================================================== */
 
-  if(
-    !document.getElementById("test").classList.contains("hidden") &&
-    index<100
-  ){
+window.addEventListener(
+  "beforeunload",
+  function(e){
 
-    e.preventDefault();
-    e.returnValue="";
+    if(
+      testStarted &&
+      !testFinished
+    ){
+
+      e.preventDefault();
+
+      e.returnValue = "";
+
+    }
 
   }
+);
 
-});
+
+/* =====================================================
+   EMPÊCHER RETOUR ARRIÈRE
+===================================================== */
+
+window.addEventListener(
+  "popstate",
+  function(){
+
+    if(
+      testStarted &&
+      !testFinished
+    ){
+
+      history.pushState(
+        {test:true},
+        "",
+        location.href
+      );
+
+      alert(
+        "Le retour en arrière est désactivé pendant le test."
+      );
+    }
+
+  }
+);
 
 
-history.pushState(null,"",location.href);
+/* =====================================================
+   INITIALISATION
+===================================================== */
 
-window.addEventListener("popstate",()=>{
+document.addEventListener(
+  "DOMContentLoaded",
+  function(){
 
-  if(!document.getElementById("test").classList.contains("hidden")){
+    const startButton =
+      document.getElementById("startBtn");
 
-    history.pushState(null,"",location.href);
+    const nameInput =
+      document.getElementById("name");
 
-    alert(
-      "Le retour en arrière est désactivé pendant le test."
+    const closeModalButton =
+      document.getElementById("closeModalBtn");
+
+    const closeWarningButton =
+      document.getElementById("closeWarningBtn");
+
+
+    /* Bouton COMMENCER */
+
+    startButton.addEventListener(
+      "click",
+      startTest
     );
 
+
+    /* Entrée clavier */
+
+    nameInput.addEventListener(
+      "keydown",
+      function(event){
+
+        if(event.key === "Enter"){
+
+          event.preventDefault();
+
+          startTest();
+        }
+
+      }
+    );
+
+
+    /* Fermer texte */
+
+    closeModalButton.addEventListener(
+      "click",
+      closeModal
+    );
+
+
+    /* Fermer avertissement */
+
+    closeWarningButton.addEventListener(
+      "click",
+      closeWarning
+    );
+
+
+    /* Historique initial */
+
+    history.pushState(
+      {home:true},
+      "",
+      location.href
+    );
+
+
+    /* Vérification */
+
+    console.log(
+      "TEST BLANC EXCELLENTIA chargé."
+    );
+
+    console.log(
+      "Nombre de questions :",
+      Q.length
+    );
+
+    if(Q.length !== 100){
+
+      console.error(
+        "ERREUR : le test doit contenir 100 questions."
+      );
+
+    }else{
+
+      console.log(
+        "✓ 100 questions correctement chargées."
+      );
+    }
+
   }
-
-});
-
-
-/* =====================================================
-   ESCAPE HTML
-===================================================== */
-
-function escape(t){
-
-  return String(t)
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
-
-}
-
-
-/* =====================================================
-   VÉRIFICATION
-===================================================== */
-
-console.log("Questions :",Q.length);
-
-if(Q.length!==100){
-  console.error("ERREUR : le test ne contient pas 100 questions.");
-}
+);
 
 </script>
 
